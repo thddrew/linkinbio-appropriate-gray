@@ -3,7 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
-import { BodyFontFamily, HeaderFontFamily } from "@/lib/styles";
+import { BodyFontFamily, HeaderFontFamily } from "@/config/styles";
 
 export default function RootLayout({
   children,

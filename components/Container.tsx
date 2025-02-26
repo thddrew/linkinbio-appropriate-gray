@@ -1,6 +1,6 @@
 "use server";
 
-import { DefaultStyleProps } from "@/lib/styles";
+import { DefaultStyleProps } from "@/config/styles";
 import { cn } from "@/lib/utils";
 
 type ContainerProps = {
@@ -17,14 +17,14 @@ export const Container = async ({
   return (
     <div
       className={cn(
-        "min-h-screen px-4 py-8 sm:p-20 font-[family-name:var(--font-body)]"
+        "min-h-full h-full px-4 py-8 font-[family-name:var(--font-body)]"
       )}
       style={{
         backgroundColor,
         color: fontColour,
       }}
     >
-      <main className="max-w-md mx-auto space-y-8 relative z-10">
+      <main className="h-full flex flex-col gap-8 max-w-md mx-auto relative z-10">
         {children}
       </main>
       {backgroundImage && (

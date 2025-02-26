@@ -1,6 +1,6 @@
 "use server";
 
-import { DefaultStyleProps, getShapeStyles, Shapes } from "@/lib/styles";
+import { DefaultStyleProps, getShapeStyles, Shapes } from "@/config/styles";
 /**
  * Displays the profile header with the user's name, email, and profile picture
  */

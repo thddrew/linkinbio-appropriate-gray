@@ -1,4 +1,4 @@
-import { DefaultStyleProps } from "@/lib/styles";
+import { DefaultStyleProps } from "@/config/styles";
 
 export type SizeVariants = "sm" | "md" | "lg";
 

@@ -4,11 +4,11 @@ import { Profile, ProfileProps } from "@/components/Profile";
 import { Social, SocialProps } from "@/components/Socials";
 import { Metadata } from "next";
 
-import metadata from "@/lib/metadata.json";
-import socials from "@/lib/socials.json";
-import links from "@/lib/links.json";
-import bio from "@/lib/bio.json";
-import container from "@/lib/container.json";
+import metadata from "@/config/metadata.json";
+import socials from "@/config/socials.json";
+import links from "@/config/links.json";
+import bio from "@/config/bio.json";
+import container from "@/config/container.json";
 import type { CardProps } from "@/components/Links/types";
 
 export const generateMetadata = async (): Promise<Metadata> => {
@@ -25,7 +25,7 @@ export default async function Home() {
       >
         {(socials as SocialProps[]).map((social) => (
           <Social
-            key={social.url}
+            key={`${social.url}-${social.brand}`}
             {...social}
           />
         ))}
@@ -36,14 +36,13 @@ export default async function Home() {
       >
         {(links as CardProps[]).map((link) => (
           <Link
-            key={link.url}
+            key={`${link.url}-${link.title}`}
             {...link}
           />
         ))}
-        <a
-          href="https://espressotonic.studio"
-          className="text-center text-xs"
-        >
+      </section>
+      <section className="mt-auto text-center text-xs">
+        <a href="https://espressotonic.studio">
           <i>© {new Date().getFullYear()} Espresso Tonic Studio</i>
         </a>
       </section>

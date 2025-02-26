@@ -10,7 +10,7 @@ import {
   getShapeStyles,
   getThemeClasses,
   Shapes,
-} from "@/lib/styles";
+} from "@/config/styles";
 import {
   CardProps,
   MediumCardProps,
