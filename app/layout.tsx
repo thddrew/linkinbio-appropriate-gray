@@ -13,14 +13,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="bg-black"
       suppressHydrationWarning
     >
       <body
         className={cn(
           HeaderFontFamily.variable,
           BodyFontFamily.variable,
-          "antialiased"
+          "antialiased min-h-screen"
         )}
       >
         <ThemeProvider
