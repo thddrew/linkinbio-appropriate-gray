@@ -9,16 +9,16 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { cn } from "@/lib/utils";
 
 type ProfilePictureProps = {
-  imageUrl: string;
+  src: string;
   fallback?: string;
   shape?: Shapes;
 };
 
-const ProfilePicture = ({ imageUrl, fallback, shape }: ProfilePictureProps) => {
+const ProfilePicture = ({ src, fallback, shape }: ProfilePictureProps) => {
   return (
     <Avatar className="size-24">
       <AvatarImage
-        src={imageUrl}
+        src={src}
         fetchPriority="high"
         className={cn(getShapeStyles(shape))}
       />
@@ -34,7 +34,7 @@ export type ProfileProps = {
   DefaultStyleProps;
 
 export const Profile = async ({
-  imageUrl,
+  src,
   fallback = "",
   name,
   description,
@@ -49,7 +49,7 @@ export const Profile = async ({
       }}
     >
       <ProfilePicture
-        imageUrl={imageUrl}
+        src={src}
         fallback={fallback}
         shape={shape}
       />
