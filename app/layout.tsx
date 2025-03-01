@@ -13,13 +13,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      className="min-h-screen h-full"
       suppressHydrationWarning
     >
       <body
         className={cn(
           HeaderFontFamily.variable,
           BodyFontFamily.variable,
-          "antialiased min-h-screen"
+          "antialiased h-full"
         )}
       >
         <ThemeProvider
