@@ -10,6 +10,7 @@ import links from "@/config/links.json";
 import bio from "@/config/bio.json";
 import container from "@/config/container.json";
 import type { CardProps } from "@/components/Links/types";
+import type { ContainerProps } from "@/components/Container";
 
 export const generateMetadata = async (): Promise<Metadata> => {
   return metadata;
@@ -17,7 +18,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 export default async function Home() {
   return (
-    <Container {...container}>
+    <Container {...(container as ContainerProps)}>
       <Profile {...(bio as ProfileProps)} />
       <section
         id="socials"

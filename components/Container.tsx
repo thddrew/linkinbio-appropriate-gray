@@ -3,7 +3,7 @@
 import { DefaultStyleProps } from "@/config/styles";
 import { cn } from "@/lib/utils";
 
-type ContainerProps = {
+export type ContainerProps = {
   backgroundImage?: string;
   children: React.ReactNode;
 } & DefaultStyleProps;
