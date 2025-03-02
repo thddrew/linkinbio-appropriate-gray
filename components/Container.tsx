@@ -1,35 +1,36 @@
 "use server";
 
-import { DefaultStyleProps } from "@/config/styles";
 import { cn } from "@/lib/utils";
+import theme from "@/config/theme.json";
 
-export type ContainerProps = {
+type ContainerProps = {
+  backgroundColor?: string;
   backgroundImage?: string;
   children: React.ReactNode;
-} & DefaultStyleProps;
+};
 
 export const Container = async ({
   children,
   backgroundColor,
   backgroundImage,
-  fontColour,
 }: ContainerProps) => {
   return (
     <div
       className={cn(
-        "min-h-full h-full px-4 py-8 font-[family-name:var(--font-body)]"
+        "relative min-h-full h-full px-4 pb-8 pt-10",
+        theme?.font.body.className,
+        theme?.container?.className
       )}
       style={{
         backgroundColor,
-        color: fontColour,
       }}
     >
-      <main className="h-full flex flex-col gap-8 max-w-md mx-auto relative z-10">
+      <main className="max-w-md h-full mx-auto flex flex-col gap-8 relative z-10">
         {children}
       </main>
       {backgroundImage && (
         <div
-          className="fixed z-0 top-0 left-0 w-full h-full bg-cover bg-center"
+          className="absolute z-0 top-0 left-0 w-full h-full bg-cover bg-center"
           style={{
             backgroundImage: `url(${backgroundImage})`,
           }}

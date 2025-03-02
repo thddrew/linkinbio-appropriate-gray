@@ -1,5 +1,3 @@
-import { DefaultStyleProps } from "@/config/styles";
-
 export type SizeVariants = "sm" | "md" | "lg";
 
 // Base props that are common to all variants
@@ -8,7 +6,7 @@ type BaseCardProps = {
   title: string;
   newTab?: boolean;
   priority?: boolean;
-} & DefaultStyleProps;
+};
 
 // Small card specific props
 export type SmallCardProps = BaseCardProps & {

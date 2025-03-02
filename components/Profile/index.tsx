@@ -1,26 +1,25 @@
 "use server";
 
-import { DefaultStyleProps, getShapeStyles, Shapes } from "@/config/styles";
+import { DefaultStyleProps } from "@/config/styles";
 /**
  * Displays the profile header with the user's name, email, and profile picture
  */
 
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { cn } from "@/lib/utils";
+import theme from "@/config/theme.json";
 
 type ProfilePictureProps = {
   src: string;
   fallback?: string;
-  shape?: Shapes;
 };
 
-const ProfilePicture = ({ src, fallback, shape }: ProfilePictureProps) => {
+const ProfilePicture = ({ src, fallback }: ProfilePictureProps) => {
   return (
-    <Avatar className="size-24">
+    <Avatar className={cn("size-24", theme?.profile?.avatar.className)}>
       <AvatarImage
         src={src}
         fetchPriority="high"
-        className={cn(getShapeStyles(shape))}
       />
       <AvatarFallback>{fallback}</AvatarFallback>
     </Avatar>
@@ -39,7 +38,6 @@ export const Profile = async ({
   name,
   description,
   fontColour,
-  shape = "circle",
 }: ProfileProps) => {
   return (
     <section
@@ -51,9 +49,8 @@ export const Profile = async ({
       <ProfilePicture
         src={src}
         fallback={fallback}
-        shape={shape}
       />
-      <p className={cn(`font-semibold font-[family-name:var(--font-header)]`)}>
+      <p className={cn(theme?.font.header.className, "font-semibold")}>
         {name}
       </p>
       <p className="text-sm">{description}</p>

@@ -4,50 +4,31 @@
  */
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { Button } from "../ui/button";
-import {
-  getDynamicThemeStyles,
-  getShapeStyles,
-  getThemeClasses,
-  Shapes,
-} from "@/config/styles";
-import {
-  CardProps,
-  MediumCardProps,
-  SizeVariants,
-  SmallCardProps,
-} from "./types";
-
-const mapSizeToWidth = {
-  sm: 40,
-  md: 140,
-  lg: 100,
-};
+import { Button } from "@/components/ui/button";
+import { CardProps, MediumCardProps, SmallCardProps } from "./types";
+import Image from "next/image";
+import theme from "@/config/theme.json";
 
 const Thumbnail = ({
   image,
   alt,
   emoji,
-  size,
-  shape,
 }: {
   image?: string;
   alt: string;
   emoji?: string;
-  size: SizeVariants;
-  shape?: Shapes;
 }) => {
   if (image) {
     return (
       <div>
-        <img
+        <Image
           src={image}
           alt={alt}
-          width={mapSizeToWidth[size]}
-          height={mapSizeToWidth[size]}
+          width={theme?.links?.thumbnailImage?.width ?? 40}
+          height={theme?.links?.thumbnailImage?.height ?? 40}
           className={cn(
-            "aspect-square min-w-10 min-h-10",
-            getShapeStyles(shape)
+            "aspect-square",
+            theme?.links?.thumbnailImage?.className
           )}
         />
       </div>
@@ -59,7 +40,7 @@ const Thumbnail = ({
       <span
         className={cn(
           "size-10 text-3xl content-center aspect-square",
-          getShapeStyles(shape)
+          theme?.links?.thumbnailEmoji?.className
         )}
       >
         {emoji}
@@ -76,36 +57,25 @@ const SmallLinkCard = ({
   thumbnailImage,
   thumbnailEmoji,
   newTab = false,
-  fontColour,
-  shape = "circle",
-  priority = false,
 }: SmallCardProps) => {
   return (
     <a
       href={url}
       target={newTab ? "_blank" : "_self"}
-      style={{
-        color: fontColour,
-      }}
     >
       <Card
         className={cn(
           "p-2 min-h-14 rounded-full h-auto w-full relative text-center flex items-center gap-4 text-inherit",
-          getShapeStyles(shape),
-          getThemeClasses(),
-          { "animate-horizontal-vibration": priority }
+          theme?.links?.background?.className
         )}
-        style={getDynamicThemeStyles()}
       >
         <Thumbnail
           image={thumbnailImage}
           emoji={thumbnailEmoji}
           alt={title}
-          shape={shape}
-          size="sm"
         />
         <div
-          className={cn("w-full mr-auto text-sm", {
+          className={cn("w-full mr-auto", {
             "pr-10": thumbnailEmoji || thumbnailImage,
           })}
         >
@@ -123,28 +93,27 @@ const MediumLinkCard = ({
   thumbnailEmoji,
   description,
   newTab = false,
-  shape = "rounded",
   buttonText = "Purchase",
 }: MediumCardProps) => {
   return (
     <Card
       className={cn(
-        "p-3 rounded-2xl w-full relative flex flex-wrap items-stretch gap-4 text-inherit",
-        getShapeStyles(shape),
-        getThemeClasses()
+        "p-3 w-full relative flex flex-wrap items-stretch gap-4 text-inherit",
+        theme?.links?.background?.className
       )}
-      style={getDynamicThemeStyles()}
     >
       <Thumbnail
         image={thumbnailImage}
         emoji={thumbnailEmoji}
         alt={title}
-        size="md"
-        shape={shape}
       />
-      <div className="flex flex-col flex-1 w-full mr-auto text-sm gap-2">
-        <p className="font-bold">{title}</p>
-        <p className="text-sm">{description}</p>
+      <div className="flex flex-col flex-1 w-full mr-auto gap-2">
+        <div>
+          <p className={cn(theme?.links?.font?.header?.className)}>{title}</p>
+          <p className={cn(theme?.links?.font?.body?.className)}>
+            {description}
+          </p>
+        </div>
         <a
           className="mt-auto hidden xs:block"
           href={url}
@@ -152,7 +121,10 @@ const MediumLinkCard = ({
         >
           <Button
             variant="outline"
-            className="w-full whitespace-normal h-auto"
+            className={cn(
+              "w-full whitespace-normal h-auto",
+              theme?.links?.button?.className
+            )}
           >
             {buttonText}
           </Button>

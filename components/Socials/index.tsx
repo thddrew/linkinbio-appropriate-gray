@@ -1,10 +1,11 @@
 import Image from "next/image";
-
+import { cn } from "@/lib/utils";
+import theme from "@/config/theme.json";
 // https://cdn.simpleicons.org/[ICON SLUG]/[COLOR]/[DARK_MODE_COLOR]
 const cdnLink = `https://cdn.simpleicons.org`;
 
-const createBrandLink = (brand: string, color: string, darkColor: string) => {
-  return `${`${cdnLink}/${brand}`}/${color}/${darkColor}`;
+const createBrandLink = (brand: string, color: string) => {
+  return `${`${cdnLink}/${brand}`}/${color}`;
 };
 
 export type SocialProps = {
@@ -12,27 +13,25 @@ export type SocialProps = {
   brand: string;
   color?: string;
   darkColor?: string;
-  size?: "sm" | "md";
 };
 
-export const Social = ({
-  url,
-  brand,
-  color = "black",
-  darkColor = "white",
-  size = "sm",
-}: SocialProps) => {
+export const Social = ({ url, brand }: SocialProps) => {
   return (
     <a
       href={url}
       target="_blank"
     >
       <Image
-        src={brand ? createBrandLink(brand, color, darkColor) : "/avatar.png"}
+        src={
+          brand
+            ? createBrandLink(brand, theme?.socials?.icon?.color ?? "black")
+            : "/avatar.png"
+        }
         alt={url}
-        width={size === "sm" ? 20 : 24}
-        height={size === "sm" ? 20 : 24}
         unoptimized
+        width={theme?.socials?.icon?.width ?? 24}
+        height={theme?.socials?.icon?.height ?? 24}
+        className={cn(theme?.socials?.icon.className)}
       />
     </a>
   );
