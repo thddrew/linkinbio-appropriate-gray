@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import theme from "@/config/theme.json";
 
-type ContainerProps = {
+export type ContainerProps = {
   backgroundColor?: string;
   backgroundImage?: string;
   children: React.ReactNode;
