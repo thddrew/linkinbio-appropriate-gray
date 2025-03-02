@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { CardProps, MediumCardProps, SmallCardProps } from "./types";
 import Image from "next/image";
-import theme from "@/config/theme.json";
+import theme from "@/config/theme";
 
 const Thumbnail = ({
   image,

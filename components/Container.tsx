@@ -1,7 +1,7 @@
 "use server";
 
 import { cn } from "@/lib/utils";
-import theme from "@/config/theme.json";
+import theme from "@/config/theme";
 
 export type ContainerProps = {
   backgroundColor?: string | null;

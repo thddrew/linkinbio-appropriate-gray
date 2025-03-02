@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import theme from "@/config/theme.json";
+import theme from "@/config/theme";
 // https://cdn.simpleicons.org/[ICON SLUG]/[COLOR]/[DARK_MODE_COLOR]
 const cdnLink = `https://cdn.simpleicons.org`;
 
