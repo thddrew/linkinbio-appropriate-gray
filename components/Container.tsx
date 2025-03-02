@@ -4,9 +4,9 @@ import { cn } from "@/lib/utils";
 import theme from "@/config/theme.json";
 
 export type ContainerProps = {
-  backgroundColor?: string;
-  backgroundImage?: string;
-  children: React.ReactNode;
+  backgroundColor?: string | null;
+  backgroundImage?: string | null;
+  children?: React.ReactNode;
 };
 
 export const Container = async ({
@@ -22,7 +22,7 @@ export const Container = async ({
         theme?.container?.className
       )}
       style={{
-        backgroundColor,
+        backgroundColor: backgroundColor ?? undefined,
       }}
     >
       <main className="max-w-md h-full mx-auto flex flex-col gap-8 relative z-10">
