@@ -4,14 +4,12 @@ import { cn } from "@/lib/utils";
 import theme from "@/config/theme";
 
 export type ContainerProps = {
-  backgroundColor?: string | null;
   backgroundImage?: string | null;
   children?: React.ReactNode;
 };
 
 export const Container = async ({
   children,
-  backgroundColor,
   backgroundImage,
 }: ContainerProps) => {
   return (
@@ -21,9 +19,6 @@ export const Container = async ({
         theme?.font.body.className,
         theme?.container?.className
       )}
-      style={{
-        backgroundColor: backgroundColor ?? undefined,
-      }}
     >
       <main className="max-w-md h-full mx-auto flex flex-col gap-8 relative z-10">
         {children}
