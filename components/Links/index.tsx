@@ -13,7 +13,9 @@ const Thumbnail = ({
   image,
   alt,
   emoji,
+  size,
 }: {
+  size: "sm" | "md";
   image?: string;
   alt: string;
   emoji?: string;
@@ -24,11 +26,12 @@ const Thumbnail = ({
         <Image
           src={image}
           alt={alt}
-          width={theme?.links?.thumbnailImage?.width ?? 40}
-          height={theme?.links?.thumbnailImage?.height ?? 40}
+          width={theme?.links?.thumbnailImage?.[size]?.width ?? 40}
+          height={theme?.links?.thumbnailImage?.[size]?.height ?? 40}
           className={cn(
             "aspect-square",
-            theme?.links?.thumbnailImage?.className
+            theme?.links?.thumbnailImage?.className,
+            theme?.links?.thumbnailImage?.[size]?.className
           )}
         />
       </div>
@@ -70,6 +73,7 @@ const SmallLinkCard = ({
         )}
       >
         <Thumbnail
+          size="sm"
           image={thumbnailImage}
           emoji={thumbnailEmoji}
           alt={title}
@@ -103,6 +107,7 @@ const MediumLinkCard = ({
       )}
     >
       <Thumbnail
+        size="md"
         image={thumbnailImage}
         emoji={thumbnailEmoji}
         alt={title}

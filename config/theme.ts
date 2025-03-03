@@ -36,9 +36,17 @@ export default {
       className: "",
     },
     thumbnailImage: {
-      height: 0,
-      width: 0,
       className: "",
+      sm: {
+        height: 0,
+        width: 0,
+        className: "",
+      },
+      md: {
+        height: 0,
+        width: 0,
+        className: "",
+      },
     },
     font: {
       header: {
