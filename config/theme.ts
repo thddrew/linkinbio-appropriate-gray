@@ -7,6 +7,14 @@ export default {
       className: "",
       style: {},
     },
+    header: {
+      className: "",
+      style: {},
+    },
+    description: {
+      className: "",
+      style: {},
+    },
   },
   socials: {
     icon: {
@@ -39,9 +47,6 @@ export default {
       body: {
         className: "",
       },
-      button: {
-        className: "",
-      },
     },
   },
   font: {
@@ -49,6 +54,9 @@ export default {
       className: "",
     },
     body: {
+      className: "",
+    },
+    button: {
       className: "",
     },
   },

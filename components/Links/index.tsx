@@ -123,7 +123,8 @@ const MediumLinkCard = ({
             variant="outline"
             className={cn(
               "w-full whitespace-normal h-auto",
-              theme?.links?.button?.className
+              theme?.font.button.className,
+              theme?.links.button.className
             )}
           >
             {buttonText}
@@ -137,7 +138,11 @@ const MediumLinkCard = ({
       >
         <Button
           variant="outline"
-          className="w-full whitespace-normal h-auto"
+          className={cn(
+            "w-full whitespace-normal h-auto",
+            theme?.font.button.className,
+            theme?.links.button.className
+          )}
         >
           {buttonText}
         </Button>

@@ -3,7 +3,11 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
-import { BodyFontFamily, HeaderFontFamily } from "@/config/styles";
+import {
+  BodyFontFamily,
+  HeaderFontFamily,
+  ButtonFontFamily,
+} from "@/config/fonts";
 
 export default function RootLayout({
   children,
@@ -20,6 +24,7 @@ export default function RootLayout({
         className={cn(
           HeaderFontFamily.variable,
           BodyFontFamily.variable,
+          ButtonFontFamily.variable,
           "antialiased h-full"
         )}
       >

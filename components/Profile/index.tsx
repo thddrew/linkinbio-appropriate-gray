@@ -42,10 +42,22 @@ export const Profile = async ({
         src={src}
         fallback={fallback}
       />
-      <p className={cn(theme?.font.header.className, "font-semibold")}>
+      <p
+        className={cn(
+          theme?.font.header.className,
+          theme.profile.header.className
+        )}
+      >
         {name}
       </p>
-      <p className="text-sm">{description}</p>
+      <p
+        className={cn(
+          theme?.font.body.className,
+          theme.profile.description.className
+        )}
+      >
+        {description}
+      </p>
     </section>
   );
 };
