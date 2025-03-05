@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { CardProps, MediumCardProps, SmallCardProps } from "./types";
 import Image from "next/image";
 import theme from "@/config/theme";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import {
   Drawer,
   DrawerContent,
@@ -289,22 +289,6 @@ const MediumLinkCard = ({
 
 const MediumLinkCardWrapper = (props: MediumCardProps) => {
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-
-  const drawerCntr = useRef<HTMLDivElement>(
-    document.getElementById("preview-container") as HTMLDivElement
-  );
-
-  // This is a hack for the builder
-  useEffect(() => {
-    drawerCntr.current = document.getElementById(
-      "preview-container"
-    ) as HTMLDivElement;
-  }, []);
-
-  if (!drawerCntr.current) {
-    return null;
-  }
-
   return (
     <Drawer
       open={isPreviewOpen}
@@ -321,7 +305,6 @@ const MediumLinkCardWrapper = (props: MediumCardProps) => {
         />
       </DrawerTrigger>
       <DrawerContent
-        container={drawerCntr.current}
         className={cn(
           "absolute",
           theme?.links?.background?.className,
