@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * A link component directs users to a resource.
  * It can be used to link to a website, a social media profile, or a document.
