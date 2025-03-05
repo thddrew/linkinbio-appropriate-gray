@@ -29,24 +29,20 @@ export default {
     background: {
       className: "",
     },
+    content: {
+      className: "",
+    },
     button: {
       className: "",
     },
+    buttonPosition: "inline",
     thumbnailEmoji: {
       className: "",
     },
     thumbnailImage: {
+      height: 40,
+      width: 40,
       className: "",
-      sm: {
-        height: 0,
-        width: 0,
-        className: "",
-      },
-      md: {
-        height: 0,
-        width: 0,
-        className: "",
-      },
     },
     font: {
       header: {
@@ -54,6 +50,90 @@ export default {
       },
       body: {
         className: "",
+      },
+    },
+    sm: {
+      background: {
+        className: "",
+      },
+      content: {
+        className: "",
+      },
+      button: {
+        className: "",
+      },
+      buttonPosition: "inline",
+      thumbnailEmoji: {
+        className: "",
+      },
+      thumbnailImage: {
+        height: 40,
+        width: 40,
+        className: "",
+      },
+      font: {
+        header: {
+          className: "",
+        },
+        body: {
+          className: "",
+        },
+      },
+    },
+    md: {
+      background: {
+        className: "",
+      },
+      content: {
+        className: "",
+      },
+      button: {
+        className: "",
+      },
+      buttonPosition: "inline",
+      thumbnailEmoji: {
+        className: "",
+      },
+      thumbnailImage: {
+        height: 40,
+        width: 40,
+        className: "",
+      },
+      font: {
+        header: {
+          className: "",
+        },
+        body: {
+          className: "",
+        },
+      },
+      preview: {
+        background: {
+          className: "",
+        },
+        content: {
+          className: "",
+        },
+        button: {
+          className: "",
+        },
+        buttonPosition: "inline",
+        thumbnailEmoji: {
+          className: "",
+        },
+        thumbnailImage: {
+          height: 40,
+          width: 40,
+          className: "",
+        },
+        font: {
+          header: {
+            className: "",
+          },
+          body: {
+            className: "",
+          },
+        },
       },
     },
   },

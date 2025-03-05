@@ -23,7 +23,10 @@ export type MediumCardProps = BaseCardProps & {
   size: "md";
   description: string; // Required for medium cards
   buttonText?: string;
+  buttonPosition?: "inline" | "end";
   onPreviewClick?: () => void;
+  price?: string;
+  currency?: string;
 } & (
     | { thumbnailImage: string; thumbnailEmoji?: never }
     | { thumbnailImage?: never; thumbnailEmoji: string }
