@@ -306,7 +306,7 @@ const MediumLinkCardWrapper = (props: MediumCardProps) => {
       </DrawerTrigger>
       <DrawerContent
         className={cn(
-          "absolute",
+          "absolute max-h-[80%]",
           theme?.links?.background?.className,
           theme?.links?.[props.size]?.background?.className
         )}
