@@ -1,1 +1,8 @@
 /node_modules
+.turbo
+.vscode
+.env
+.env.*
+*.env.*
+
+*.dev.yml
