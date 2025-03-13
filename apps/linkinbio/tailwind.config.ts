@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["class"],
+  darkMode: ["class", "selector"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -85,10 +85,4 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate")],
-  safelist: [
-    "bg-white/10",
-    "backdrop-blur-md",
-    "hover:translate-x-0.5",
-    "hover:translate-y-0.5",
-  ],
 } satisfies Config;
