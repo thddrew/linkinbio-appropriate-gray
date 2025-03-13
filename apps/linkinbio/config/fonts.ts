@@ -1,16 +1,16 @@
-import {dm_serif_display_6597e0c-module__LLswHG__variable, dm_sans_31a10f29-module__YbHr9q__variable } from "next/font/google";
+import {DM_Serif_Display, DM_Sans } from "next/font/google";
 
-export const HeaderFontFamily = dm_serif_display_6597e0c-module__LLswHG__variable({
+export const HeaderFontFamily = DM_Serif_Display({
   variable: "--font-header",
   subsets: ["latin"],
 });
 
-export const BodyFontFamily = dm_sans_31a10f29-module__YbHr9q__variable({
+export const BodyFontFamily = DM_Sans({
   variable: "--font-body",
   subsets: ["latin"],
 });
 
-export const ButtonFontFamily = dm_sans_31a10f29-module__YbHr9q__variable({
+export const ButtonFontFamily = DM_Sans({
   variable: "--font-button",
   subsets: ["latin"],
 });
