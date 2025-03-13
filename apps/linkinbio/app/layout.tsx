@@ -21,11 +21,13 @@ export default function RootLayout({
       className="min-h-screen h-full"
       suppressHydrationWarning
     >
-      <Script
-        defer
-        src={`${process.env.ANALYTICS_URL}/analytics/script.js`}
-        data-website-id={process.env.ANALYTICS_ID}
-      />
+      {process.env.ANALYTICS_ID && (
+        <Script
+          defer
+          src={`${process.env.ANALYTICS_URL}/analytics/script.js`}
+          data-website-id={process.env.ANALYTICS_ID}
+        />
+      )}
       <body
         className={cn(
           HeaderFontFamily.variable,
