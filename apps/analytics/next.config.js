@@ -206,6 +206,9 @@ const config = {
         },
       },
     },
+    serverActions: {
+      allowedOrigins: [process.env.LINKINBIO_URL],
+    },
   },
   webpack(config) {
     config.module.rules.push({
