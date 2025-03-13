@@ -10,8 +10,7 @@
     "url": "https://github.com/umami-software/umami.git"
   },
   "scripts": {
-    "dev": "npm-run-all --parallel dev:app tmole",
-    "dev:app": "next dev -p 3007 --turbo",
+    "dev": "next dev -p 3007 --turbo",
     "tmole": "tmole 3007 as umami.tunnelmole.net",
     "build": "npm-run-all check-env build-db check-db build-tracker build-geo build-app",
     "start": "next start",

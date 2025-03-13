@@ -2,7 +2,11 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "build:analytics": "turbo run build --filter=analytics",
+    "build:linkinbio": "turbo run build --filter=linkinbio",
     "dev": "turbo run dev",
+    "dev:analytics": "turbo run dev --filter=analytics",
+    "dev:linkinbio": "turbo run dev --filter=linkinbio",
     "lint": "turbo run lint"
   },
   "devDependencies": {
