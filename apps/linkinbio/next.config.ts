@@ -16,11 +16,11 @@ const nextConfig: NextConfig = {
   rewrites: async () => [
     {
       source: "/analytics",
-      destination: `${process.env.ANALYTICS_URL}/`,
+      destination: `${process.env.ANALYTICS_URL}/analytics`,
     },
     {
       source: "/analytics/:path*",
-      destination: `${process.env.ANALYTICS_URL}/:path*`,
+      destination: `${process.env.ANALYTICS_URL}/analytics/:path*`,
     },
   ],
 };

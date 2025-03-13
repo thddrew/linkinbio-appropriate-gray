@@ -177,7 +177,6 @@ if (cloudMode && cloudUrl) {
 
 /** @type {import('next').NextConfig} */
 const config = {
-  assetPrefix: '/umami',
   reactStrictMode: false,
   env: {
     basePath,
