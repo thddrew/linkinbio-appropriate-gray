@@ -1,151 +1,151 @@
 export default {
-  container: {
-    className: "",
+  "container": {
+    "className": "bg-[#171918] text-white"
   },
-  profile: {
-    avatar: {
-      className: "",
-      style: {},
+  "profile": {
+    "avatar": {
+      "style": {},
+      "className": "rounded-full"
     },
-    header: {
-      className: "",
-      style: {},
+    "header": {
+      "style": {},
+      "className": "text-lg"
     },
-    description: {
-      className: "",
-      style: {},
-    },
+    "description": {
+      "style": {},
+      "className": ""
+    }
   },
-  socials: {
-    icon: {
-      width: 24,
-      height: 24,
-      color: "",
-      className: "",
-      style: {},
-    },
+  "socials": {
+    "icon": {
+      "color": "white",
+      "width": 24,
+      "height": 24,
+      "style": {},
+      "className": ""
+    }
   },
-  links: {
-    background: {
-      className: "",
+  "links": {
+    "buttonPosition": "inline",
+    "content": {
+      "className": ""
     },
-    content: {
-      className: "",
+    "thumbnailEmoji": {
+      "className": ""
     },
-    button: {
-      className: "",
+    "thumbnailImage": {
+      "height": 40,
+      "width": 40,
+      "className": "rounded-2xl"
     },
-    buttonPosition: "inline",
-    thumbnailEmoji: {
-      className: "",
+    "background": {
+      "className": "border bg-[#171918] border-[#515151] border-solid rounded-2xl"
     },
-    thumbnailImage: {
-      height: 40,
-      width: 40,
-      className: "",
+    "button": {
+      "className": "bg-transparent hover:bg-transparent hover:text-inherit"
     },
-    font: {
-      header: {
-        className: "",
+    "font": {
+      "header": {
+        "className": ""
       },
-      body: {
-        className: "",
-      },
+      "body": {
+        "className": ""
+      }
     },
-    sm: {
-      background: {
-        className: "",
+    "sm": {
+      "buttonPosition": "inline",
+      "content": {
+        "className": ""
       },
-      content: {
-        className: "",
+      "thumbnailEmoji": {
+        "className": ""
       },
-      button: {
-        className: "",
+      "thumbnailImage": {
+        "height": 40,
+        "width": 40,
+        "className": "object-fill"
       },
-      buttonPosition: "inline",
-      thumbnailEmoji: {
-        className: "",
+      "background": {
+        "className": ""
       },
-      thumbnailImage: {
-        height: 40,
-        width: 40,
-        className: "",
+      "button": {
+        "className": ""
       },
-      font: {
-        header: {
-          className: "",
+      "font": {
+        "header": {
+          "className": ""
         },
-        body: {
-          className: "",
-        },
-      },
+        "body": {
+          "className": ""
+        }
+      }
     },
-    md: {
-      background: {
-        className: "",
+    "md": {
+      "buttonPosition": "end",
+      "content": {
+        "className": "px-3"
       },
-      content: {
-        className: "",
+      "thumbnailEmoji": {
+        "className": ""
       },
-      button: {
-        className: "",
+      "thumbnailImage": {
+        "height": 120,
+        "width": 120,
+        "className": "object-fill"
       },
-      buttonPosition: "inline",
-      thumbnailEmoji: {
-        className: "",
+      "background": {
+        "className": "pb-0 px-0 border-none"
       },
-      thumbnailImage: {
-        height: 40,
-        width: 40,
-        className: "",
+      "button": {
+        "className": "border-b border-l border-r rounded-none mt-3 border-t border-[#515151]"
       },
-      font: {
-        header: {
-          className: "",
+      "font": {
+        "header": {
+          "className": ""
         },
-        body: {
-          className: "",
-        },
+        "body": {
+          "className": ""
+        }
       },
-      preview: {
-        background: {
-          className: "",
+      "preview": {
+        "buttonPosition": "inline",
+        "content": {
+          "className": ""
         },
-        content: {
-          className: "",
+        "thumbnailEmoji": {
+          "className": ""
         },
-        button: {
-          className: "",
+        "thumbnailImage": {
+          "height": 120,
+          "width": 120,
+          "className": "object-fill"
         },
-        buttonPosition: "inline",
-        thumbnailEmoji: {
-          className: "",
+        "background": {
+          "className": "border-solid"
         },
-        thumbnailImage: {
-          height: 40,
-          width: 40,
-          className: "",
+        "button": {
+          "className": "border-b-0 border-l-0 border-r-0 border-[#515151]"
         },
-        font: {
-          header: {
-            className: "",
+        "font": {
+          "header": {
+            "className": ""
           },
-          body: {
-            className: "",
-          },
-        },
-      },
-    },
+          "body": {
+            "className": ""
+          }
+        }
+      }
+    }
   },
-  font: {
-    header: {
-      className: "",
+  "font": {
+    "header": {
+      "className": "font-[(var(--font-header))]"
     },
-    body: {
-      className: "",
+    "body": {
+      "className": "font-[(var(--font-body))]"
     },
-    button: {
-      className: "",
-    },
-  },
-};
+    "button": {
+      "className": "font-[(var(--font-button))]"
+    }
+  }
+}
