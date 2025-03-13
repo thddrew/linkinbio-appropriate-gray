@@ -1,7 +1,7 @@
 import {
-  Playfair_Display as HeaderFont,
-  Geist as BodyFont,
-  Geist_Mono as ButtonFont,
+  dm_serif_display_6597e0c-module__LLswHG__variable as HeaderFont,
+  dm_sans_31a10f29-module__YbHr9q__variable as BodyFont,
+  dm_sans_31a10f29-module__YbHr9q__variable as ButtonFont,
 } from "next/font/google";
 
 export const HeaderFontFamily = HeaderFont({
