@@ -139,13 +139,13 @@ export default {
   },
   "font": {
     "header": {
-      "className": "font-[(var(--font-header))]"
+      "className": "font-[var(--font-header)]"
     },
     "body": {
-      "className": "font-[(var(--font-body))]"
+      "className": "font-[var(--font-body)]"
     },
     "button": {
-      "className": "font-[(var(--font-button))]"
+      "className": "font-[var(--font-button)]"
     }
   }
 }
