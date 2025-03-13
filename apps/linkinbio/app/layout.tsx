@@ -8,6 +8,7 @@ import {
   HeaderFontFamily,
   ButtonFontFamily,
 } from "@/config/fonts";
+import Script from "next/script";
 
 export default function RootLayout({
   children,
@@ -20,6 +21,11 @@ export default function RootLayout({
       className="min-h-screen h-full"
       suppressHydrationWarning
     >
+      <Script
+        defer
+        src={`${process.env.ANALYTICS_URL}/analytics/script.js`}
+        data-website-id={process.env.ANALYTICS_ID}
+      />
       <body
         className={cn(
           HeaderFontFamily.variable,
