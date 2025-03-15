@@ -19,6 +19,21 @@ import {
 } from "@/components/ui/drawer";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
+const getImageSize = (size: "sm" | "md", appTheme: typeof theme) => {
+  const imageSize = {
+    width:
+      appTheme?.links?.[size]?.thumbnailImage?.width ??
+      appTheme?.links?.thumbnailImage?.width ??
+      40,
+    height:
+      appTheme?.links?.[size]?.thumbnailImage?.height ??
+      appTheme?.links?.thumbnailImage?.height ??
+      40,
+  };
+
+  return imageSize;
+};
+
 const Thumbnail = ({
   image,
   alt,
@@ -30,16 +45,7 @@ const Thumbnail = ({
   emoji?: string;
   size?: "sm" | "md";
 }) => {
-  const imageSize = {
-    width:
-      theme?.links?.[size]?.thumbnailImage?.width ??
-      theme?.links?.thumbnailImage?.width ??
-      40,
-    height:
-      theme?.links?.[size]?.thumbnailImage?.height ??
-      theme?.links?.thumbnailImage?.height ??
-      40,
-  };
+  const imageSize = getImageSize(size, theme);
 
   if (image) {
     return (
@@ -102,13 +108,7 @@ const SmallLinkCard = ({
           emoji={thumbnailEmoji}
           alt={title}
         />
-        <div
-          className={cn("w-full mr-auto", {
-            "pr-10": thumbnailEmoji || thumbnailImage,
-          })}
-        >
-          {title}
-        </div>
+        <div className={cn("w-full mr-auto")}>{title}</div>
       </Card>
     </a>
   );
@@ -152,6 +152,8 @@ const MediumLinkCardPreview = ({
     </a>
   );
 
+  const imageSize = getImageSize(size, theme);
+
   return (
     <Card
       role="button"
@@ -171,12 +173,26 @@ const MediumLinkCardPreview = ({
           theme?.links?.[size]?.preview?.content?.className
         )}
       >
-        <Thumbnail
-          image={thumbnailImage}
-          emoji={thumbnailEmoji}
-          alt={title}
-          size={size}
-        />
+        {thumbnailImage || thumbnailEmoji ? (
+          <Thumbnail
+            image={thumbnailImage}
+            emoji={thumbnailEmoji}
+            alt={title}
+            size={size}
+          />
+        ) : (
+          <Image
+            src={"/images/linkinbio/linkinbio-logo.png"}
+            alt={"Linkinbio-placeholder"}
+            width={imageSize.width}
+            height={imageSize.height}
+            className={cn(
+              "text-muted-foreground bg-card",
+              theme?.links?.thumbnailImage?.className,
+              theme?.links?.[size]?.thumbnailImage?.className
+            )}
+          />
+        )}
         <div className="flex-1 flex flex-col gap-2">
           <p
             className={cn(
