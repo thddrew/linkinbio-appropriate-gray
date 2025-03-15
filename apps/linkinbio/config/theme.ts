@@ -87,6 +87,12 @@ export default {
       content: {
         className: "",
       },
+      cardImage: {
+        className: "",
+      },
+      cardEmoji: {
+        className: "",
+      },
       button: {
         className: "",
       },

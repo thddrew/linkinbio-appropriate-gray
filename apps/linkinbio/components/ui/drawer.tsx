@@ -22,7 +22,17 @@ const DrawerPortal = DrawerPrimitive.Portal;
 
 const DrawerClose = DrawerPrimitive.Close;
 
-const DrawerHandle = DrawerPrimitive.Handle;
+const DrawerHandle = React.forwardRef<
+  React.ElementRef<typeof DrawerPrimitive.Handle>,
+  React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Handle>
+>(({ className, ...props }, ref) => (
+  <DrawerPrimitive.Handle
+    ref={ref}
+    className={cn(className)}
+    {...props}
+  />
+));
+DrawerHandle.displayName = DrawerPrimitive.Handle.displayName;
 
 const DrawerOverlay = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Overlay>,
@@ -52,7 +62,6 @@ const DrawerContent = React.forwardRef<
       )}
       {...props}
     >
-      <DrawerHandle className="mx-auto my-4" />
       {children}
     </DrawerPrimitive.Content>
   </DrawerPortal>
@@ -119,4 +128,5 @@ export {
   DrawerFooter,
   DrawerTitle,
   DrawerDescription,
+  DrawerHandle,
 };

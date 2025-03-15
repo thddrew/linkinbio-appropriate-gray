@@ -4,7 +4,7 @@
  * A link component directs users to a resource.
  * It can be used to link to a website, a social media profile, or a document.
  */
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { CardProps, MediumCardProps, SmallCardProps } from "./types";
@@ -16,6 +16,7 @@ import {
   DrawerContent,
   DrawerTrigger,
   DrawerTitle,
+  DrawerHandle,
 } from "@/components/ui/drawer";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
@@ -72,6 +73,51 @@ const Thumbnail = ({
           "size-10 text-3xl content-center aspect-square",
           theme?.links?.thumbnailEmoji?.className,
           theme?.links?.[size]?.thumbnailEmoji?.className
+        )}
+      >
+        {emoji}
+      </span>
+    );
+  }
+
+  return null;
+};
+
+const MediumCardImages = ({
+  image,
+  alt,
+  emoji,
+}: {
+  image?: string;
+  alt: string;
+  emoji?: string;
+  size?: "md";
+}) => {
+  if (image) {
+    return (
+      <div>
+        <Image
+          src={image}
+          alt={alt}
+          width={0}
+          height={0}
+          sizes="100vw"
+          draggable={false}
+          className={cn(
+            "w-full h-[250px] object-contain",
+            theme?.links.md.cardImage?.className
+          )}
+        />
+      </div>
+    );
+  }
+
+  if (emoji) {
+    return (
+      <span
+        className={cn(
+          "size-10 text-3xl content-center aspect-square",
+          theme?.links.md.cardEmoji?.className
         )}
       >
         {emoji}
@@ -241,35 +287,29 @@ const MediumLinkCard = ({
   buttonText = "Purchase",
   size = "md",
 }: MediumCardProps) => {
+  const imageSize = getImageSize(size, theme);
+
   return (
     <Card
       className={cn(
-        "p-3 w-full h-[70dvh] min-h-[350px]",
+        "w-full h-[70dvh] min-h-[350px] flex flex-col",
         theme?.links?.background?.className,
         theme?.links?.[size]?.background?.className
       )}
     >
+      <MediumCardImages
+        image={thumbnailImage}
+        emoji={thumbnailEmoji}
+        alt={title}
+      />
       <CardContent
         className={cn(
-          "px-0 h-full w-full relative flex flex-col items-start gap-4 text-inherit",
+          "mt-8 flex-1 h-full w-full relative flex flex-col items-start gap-4 text-inherit",
           theme?.links?.content?.className,
           theme?.links?.[size]?.content?.className
         )}
       >
-        <Thumbnail
-          image={thumbnailImage}
-          emoji={thumbnailEmoji}
-          alt={title}
-          size={size}
-        />
-        <p
-          className={cn(
-            theme?.links?.font?.header?.className,
-            theme?.links?.[size]?.font?.header?.className
-          )}
-        >
-          {title}
-        </p>
+        <CardTitle className="text-2xl font-bold">{title}</CardTitle>
         <p
           className={cn(
             theme?.links?.font?.body?.className,
@@ -327,6 +367,7 @@ const MediumLinkCardWrapper = (props: MediumCardProps) => {
           theme?.links?.[props.size]?.background?.className
         )}
       >
+        <DrawerHandle className="mx-auto my-4" />
         <VisuallyHidden>
           <DrawerTitle>{props.title}</DrawerTitle>
         </VisuallyHidden>
