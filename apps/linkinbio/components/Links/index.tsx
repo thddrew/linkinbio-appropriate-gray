@@ -20,16 +20,16 @@ import {
 } from "@/components/ui/drawer";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
-const getImageSize = (size: "sm" | "md", appTheme: typeof theme) => {
+const getImageSize = (size: "sm" | "md", appTheme: Partial<typeof theme>) => {
   const imageSize = {
     width:
       appTheme?.links?.[size]?.thumbnailImage?.width ??
       appTheme?.links?.thumbnailImage?.width ??
-      40,
+      undefined,
     height:
       appTheme?.links?.[size]?.thumbnailImage?.height ??
       appTheme?.links?.thumbnailImage?.height ??
-      40,
+      undefined,
   };
 
   return imageSize;
@@ -56,6 +56,7 @@ const Thumbnail = ({
           alt={alt}
           width={imageSize.width}
           height={imageSize.height}
+          sizes="100vw"
           className={cn(
             "aspect-square",
             theme?.links?.thumbnailImage?.className,
