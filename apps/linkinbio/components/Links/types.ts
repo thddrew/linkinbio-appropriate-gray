@@ -27,6 +27,8 @@ export type MediumCardProps = BaseCardProps & {
   onPreviewClick?: () => void;
   price?: string;
   currency?: string;
+  polarProductId?: string;
+  polarCheckoutLink?: string;
 } & (
     | { thumbnailImage: string; thumbnailEmoji?: never }
     | { thumbnailImage?: never; thumbnailEmoji: string }

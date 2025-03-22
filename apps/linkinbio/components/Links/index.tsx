@@ -286,8 +286,25 @@ const MediumLinkCard = ({
   newTab = false,
   buttonText = "Purchase",
   size = "md",
+  price,
+  currency,
+  polarCheckoutLink,
 }: MediumCardProps) => {
   const imageSize = getImageSize(size, theme);
+
+  const CheckoutButton = (
+    <Button
+      variant="outline"
+      className={cn(
+        "w-full whitespace-normal h-auto",
+        theme?.font.button.className,
+        theme?.links?.button?.className,
+        theme?.links?.[size]?.button?.className
+      )}
+    >
+      {buttonText}
+    </Button>
+  );
 
   return (
     <Card
@@ -310,6 +327,11 @@ const MediumLinkCard = ({
         )}
       >
         <CardTitle className="text-2xl font-bold">{title}</CardTitle>
+        {price && (
+          <p>
+            {price} {currency}
+          </p>
+        )}
         <p
           className={cn(
             theme?.links?.font?.body?.className,
@@ -318,26 +340,26 @@ const MediumLinkCard = ({
         >
           {description}
         </p>
-        <a
-          className="mt-auto w-full"
-          href={url}
-          target={newTab ? "_blank" : "_self"}
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-        >
-          <Button
-            variant="outline"
-            className={cn(
-              "w-full whitespace-normal h-auto",
-              theme?.font.button.className,
-              theme?.links?.button?.className,
-              theme?.links?.[size]?.button?.className
-            )}
+        {polarCheckoutLink && !url ? (
+          <a
+            className="contents"
+            data-polar-checkout
+            href={polarCheckoutLink}
           >
-            {buttonText}
-          </Button>
-        </a>
+            {CheckoutButton}
+          </a>
+        ) : (
+          <a
+            className="contents"
+            href={url}
+            target={newTab ? "_blank" : "_self"}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+          >
+            {CheckoutButton}
+          </a>
+        )}
       </CardContent>
     </Card>
   );
@@ -354,8 +376,9 @@ const MediumLinkCardWrapper = (props: MediumCardProps) => {
         <MediumLinkCardPreview
           onPreviewClick={() => setIsPreviewOpen(true)}
           buttonPosition={
-            (theme?.links?.[props.size]?.buttonPosition as "inline" | "end") ??
-            theme?.links?.buttonPosition
+            (theme?.links?.[props.size]?.preview?.buttonPosition as
+              | "inline"
+              | "end") ?? theme?.links?.buttonPosition
           }
           {...props}
         />

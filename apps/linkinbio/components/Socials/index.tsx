@@ -5,7 +5,7 @@ import theme from "@/config/theme";
 const cdnLink = `https://cdn.simpleicons.org`;
 
 const createBrandLink = (brand: string, color: string) => {
-  return `${`${cdnLink}/${brand}`}/${color}`;
+  return `${cdnLink}/${brand}/${color}`;
 };
 
 export type SocialProps = {
@@ -24,11 +24,11 @@ export const Social = ({ url, brand }: SocialProps) => {
       <Image
         src={
           brand
-            ? createBrandLink(brand, theme?.socials?.icon?.color ?? "black")
+            ? createBrandLink(brand, theme?.socials?.icon?.color || "000000")
             : "/avatar.png"
         }
-        alt={url}
         unoptimized
+        alt={url}
         width={theme?.socials?.icon?.width ?? 24}
         height={theme?.socials?.icon?.height ?? 24}
         className={cn(theme?.socials?.icon.className)}

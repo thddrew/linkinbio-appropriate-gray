@@ -21,13 +21,6 @@ export default function RootLayout({
       className="min-h-screen h-full"
       suppressHydrationWarning
     >
-      {process.env.ANALYTICS_ID && (
-        <Script
-          defer
-          src={`${process.env.ANALYTICS_URL}/analytics/script.js`}
-          data-website-id={process.env.ANALYTICS_ID}
-        />
-      )}
       <body
         className={cn(
           HeaderFontFamily.variable,
@@ -46,6 +39,18 @@ export default function RootLayout({
         </ThemeProvider>
         <SpeedInsights />
         <Analytics />
+        <script
+          src="https://cdn.jsdelivr.net/npm/@polar-sh/checkout@0.1/dist/embed.global.js"
+          defer
+          data-auto-init
+        ></script>
+        {process.env.ANALYTICS_ID && (
+          <Script
+            defer
+            src={`${process.env.ANALYTICS_URL}/analytics/script.js`}
+            data-website-id={process.env.ANALYTICS_ID}
+          />
+        )}
       </body>
     </html>
   );
