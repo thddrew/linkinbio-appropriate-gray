@@ -1,8 +1,11 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import theme from "@/config/theme";
+import appTheme from "@/config/theme";
+import { ThemeConfig } from "../Links/types";
 // https://cdn.simpleicons.org/[ICON SLUG]/[COLOR]/[DARK_MODE_COLOR]
 const cdnLink = `https://cdn.simpleicons.org`;
+
+const theme = appTheme as ThemeConfig;
 
 const createBrandLink = (brand: string, color: string) => {
   return `${cdnLink}/${brand}/${color}`;

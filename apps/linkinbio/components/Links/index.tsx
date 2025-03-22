@@ -7,9 +7,14 @@
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { CardProps, MediumCardProps, SmallCardProps } from "./types";
+import {
+  CardProps,
+  MediumCardProps,
+  SmallCardProps,
+  ThemeConfig,
+} from "./types";
 import Image from "next/image";
-import theme from "@/config/theme";
+import appTheme from "@/config/theme";
 import { useState } from "react";
 import {
   Drawer,
@@ -20,7 +25,9 @@ import {
 } from "@/components/ui/drawer";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 
-const getImageSize = (size: "sm" | "md", appTheme: typeof theme) => {
+const theme = appTheme as ThemeConfig;
+
+const getImageSize = (size: "sm" | "md", appTheme: ThemeConfig) => {
   const imageSize = {
     width:
       appTheme?.links?.[size]?.thumbnailImage?.width ??

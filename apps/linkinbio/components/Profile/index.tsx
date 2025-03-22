@@ -6,7 +6,10 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { cn } from "@/lib/utils";
-import theme from "@/config/theme";
+import appTheme from "@/config/theme";
+import { ThemeConfig } from "../Links/types";
+
+const theme = appTheme as ThemeConfig;
 
 type ProfilePictureProps = {
   src: string;

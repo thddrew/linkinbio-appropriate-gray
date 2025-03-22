@@ -1,3 +1,4 @@
+// TODO: shared types with builder
 export type SizeVariants = "sm" | "md" | "lg";
 
 // Base props that are common to all variants
@@ -36,3 +37,94 @@ export type MediumCardProps = BaseCardProps & {
   );
 
 export type CardProps = SmallCardProps | MediumCardProps;
+
+export type Theme =
+  | "basic"
+  | "blackSneaker"
+  | "calmingMint"
+  | "construction"
+  | "simplyBlack"
+  | "whiteSneaker";
+
+export type LinkCardTheme = {
+  background: {
+    className: string;
+  };
+  content: {
+    className: string;
+  };
+  button: {
+    className: string;
+  };
+  buttonPosition: "inline" | "end";
+  thumbnailEmoji: {
+    className: string;
+  };
+  thumbnailImage: {
+    height?: number;
+    width?: number;
+    className: string;
+  };
+  cardImage?: {
+    height?: number;
+    width?: number;
+    className: string;
+  };
+  cardEmoji?: {
+    className: string;
+  };
+  font: {
+    header: {
+      className: string;
+    };
+    body: {
+      className: string;
+    };
+  };
+};
+
+export type ThemeConfig = {
+  container: {
+    className: string;
+  };
+  profile: {
+    avatar: {
+      className: string;
+      style: React.CSSProperties;
+    };
+    header: {
+      className: string;
+      style: React.CSSProperties;
+    };
+    description: {
+      className: string;
+      style: React.CSSProperties;
+    };
+  };
+  socials: {
+    icon: {
+      width: number;
+      height: number;
+      color: string;
+      className: string;
+      style: React.CSSProperties;
+    };
+  };
+  links: {
+    sm: LinkCardTheme;
+    md: LinkCardTheme & {
+      preview?: LinkCardTheme;
+    };
+  } & LinkCardTheme;
+  font: {
+    header: {
+      className: string;
+    };
+    body: {
+      className: string;
+    };
+    button: {
+      className: string;
+    };
+  };
+};
