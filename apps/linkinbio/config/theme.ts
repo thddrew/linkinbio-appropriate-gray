@@ -59,7 +59,7 @@ export default {
         "className": ""
       },
       "thumbnailImage": {
-        "className": "rounded-lg flex-[0.5] object-cover"
+        "className": "rounded-lg flex-[0.5] object-cover aspect-square"
       },
       "background": {
         "className": "bg-[#171918]"
@@ -92,7 +92,7 @@ export default {
           "className": ""
         },
         "thumbnailImage": {
-          "className": "rounded-lg flex-[0.5] object-cover"
+          "className": "rounded-lg flex-[0.5] object-cover aspect-square"
         },
         "background": {
           "className": "bg-card"
@@ -127,7 +127,7 @@ export default {
         "className": ""
       },
       "thumbnailImage": {
-        "className": "rounded-lg flex-[0.5] object-cover"
+        "className": "rounded-lg flex-[0.5] object-cover aspect-square"
       },
       "background": {
         "className": "pb-0 px-0 border-none"
@@ -160,7 +160,7 @@ export default {
           "className": ""
         },
         "thumbnailImage": {
-          "className": "rounded-lg flex-[0.5] object-cover"
+          "className": "rounded-lg flex-[0.5] object-cover aspect-square"
         },
         "background": {
           "className": "border-solid"
