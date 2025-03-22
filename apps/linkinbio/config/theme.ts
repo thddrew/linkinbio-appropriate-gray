@@ -1,157 +1,201 @@
 export default {
-  container: {
-    className: "",
+  "container": {
+    "className": "bg-[#171918] text-white"
   },
-  profile: {
-    avatar: {
-      className: "",
-      style: {},
+  "profile": {
+    "avatar": {
+      "style": {},
+      "className": "rounded-full"
     },
-    header: {
-      className: "",
-      style: {},
+    "header": {
+      "style": {},
+      "className": "text-lg"
     },
-    description: {
-      className: "",
-      style: {},
-    },
+    "description": {
+      "style": {},
+      "className": ""
+    }
   },
-  socials: {
-    icon: {
-      width: 24,
-      height: 24,
-      color: "",
-      className: "",
-      style: {},
-    },
+  "socials": {
+    "icon": {
+      "color": "white",
+      "width": 24,
+      "height": 24,
+      "style": {},
+      "className": ""
+    }
   },
-  links: {
-    background: {
-      className: "",
+  "links": {
+    "buttonPosition": "inline",
+    "content": {
+      "className": ""
     },
-    content: {
-      className: "",
+    "thumbnailEmoji": {
+      "className": ""
     },
-    button: {
-      className: "",
+    "thumbnailImage": {
+      "className": "rounded-2xl"
     },
-    buttonPosition: "inline",
-    thumbnailEmoji: {
-      className: "",
+    "background": {
+      "className": "border bg-[#171918] border-[#515151] border-solid rounded-2xl"
     },
-    thumbnailImage: {
-      height: 40,
-      width: 40,
-      className: "",
+    "button": {
+      "className": "bg-transparent hover:bg-transparent hover:text-inherit"
     },
-    font: {
-      header: {
-        className: "",
+    "font": {
+      "header": {
+        "className": ""
       },
-      body: {
-        className: "",
-      },
+      "body": {
+        "className": ""
+      }
     },
-    sm: {
-      background: {
-        className: "",
+    "sm": {
+      "buttonPosition": "inline",
+      "content": {
+        "className": ""
       },
-      content: {
-        className: "",
+      "thumbnailEmoji": {
+        "className": ""
       },
-      button: {
-        className: "",
+      "thumbnailImage": {
+        "className": "rounded-lg flex-[0.5] object-cover"
       },
-      buttonPosition: "inline",
-      thumbnailEmoji: {
-        className: "",
+      "background": {
+        "className": "bg-[#171918]"
       },
-      thumbnailImage: {
-        height: 40,
-        width: 40,
-        className: "",
+      "button": {
+        "className": ""
       },
-      font: {
-        header: {
-          className: "",
+      "font": {
+        "header": {
+          "className": ""
         },
-        body: {
-          className: "",
+        "body": {
+          "className": ""
+        }
+      },
+      "cardImage": {
+        "height": 250,
+        "width": 250,
+        "className": ""
+      },
+      "cardEmoji": {
+        "className": "text-3xl"
+      },
+      "preview": {
+        "buttonPosition": "inline",
+        "content": {
+          "className": ""
         },
-      },
-    },
-    md: {
-      background: {
-        className: "",
-      },
-      content: {
-        className: "",
-      },
-      cardImage: {
-        className: "",
-      },
-      cardEmoji: {
-        className: "",
-      },
-      button: {
-        className: "",
-      },
-      buttonPosition: "inline",
-      thumbnailEmoji: {
-        className: "",
-      },
-      thumbnailImage: {
-        height: 40,
-        width: 40,
-        className: "",
-      },
-      font: {
-        header: {
-          className: "",
+        "thumbnailEmoji": {
+          "className": ""
         },
-        body: {
-          className: "",
+        "thumbnailImage": {
+          "className": "rounded-lg flex-[0.5] object-cover"
         },
-      },
-      preview: {
-        background: {
-          className: "",
+        "background": {
+          "className": "bg-card"
         },
-        content: {
-          className: "",
+        "button": {
+          "className": ""
         },
-        button: {
-          className: "",
-        },
-        buttonPosition: "inline",
-        thumbnailEmoji: {
-          className: "",
-        },
-        thumbnailImage: {
-          height: 40,
-          width: 40,
-          className: "",
-        },
-        font: {
-          header: {
-            className: "",
+        "font": {
+          "header": {
+            "className": ""
           },
-          body: {
-            className: "",
-          },
+          "body": {
+            "className": ""
+          }
         },
+        "cardImage": {
+          "height": 250,
+          "width": 250,
+          "className": ""
+        },
+        "cardEmoji": {
+          "className": "text-3xl"
+        }
+      }
+    },
+    "md": {
+      "buttonPosition": "inline",
+      "content": {
+        "className": "px-3"
       },
-    },
+      "thumbnailEmoji": {
+        "className": ""
+      },
+      "thumbnailImage": {
+        "className": "rounded-lg flex-[0.5] object-cover"
+      },
+      "background": {
+        "className": "pb-0 px-0 border-none"
+      },
+      "button": {
+        "className": "border-b border-l border-r rounded-none mt-3 border-t border-[#515151]"
+      },
+      "font": {
+        "header": {
+          "className": ""
+        },
+        "body": {
+          "className": ""
+        }
+      },
+      "cardImage": {
+        "height": 250,
+        "width": 250,
+        "className": ""
+      },
+      "cardEmoji": {
+        "className": "text-3xl"
+      },
+      "preview": {
+        "buttonPosition": "end",
+        "content": {
+          "className": ""
+        },
+        "thumbnailEmoji": {
+          "className": ""
+        },
+        "thumbnailImage": {
+          "className": "rounded-lg flex-[0.5] object-cover"
+        },
+        "background": {
+          "className": "border-solid"
+        },
+        "button": {
+          "className": "border-b-0 border-l-0 border-r-0 border-[#515151]"
+        },
+        "font": {
+          "header": {
+            "className": ""
+          },
+          "body": {
+            "className": ""
+          }
+        },
+        "cardImage": {
+          "height": 250,
+          "width": 250,
+          "className": ""
+        },
+        "cardEmoji": {
+          "className": "text-3xl"
+        }
+      }
+    }
   },
-  font: {
-    header: {
-      className: "",
+  "font": {
+    "header": {
+      "className": "font-(family-name:--font-header)"
     },
-    body: {
-      className: "",
+    "body": {
+      "className": "font-(family-name:--font-body)"
     },
-    button: {
-      className: "",
-    },
-  },
-};
+    "button": {
+      "className": "font-(family-name:--font-button)"
+    }
+  }
+}
