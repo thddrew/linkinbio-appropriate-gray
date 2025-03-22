@@ -25,7 +25,7 @@ export type MediumCardProps = BaseCardProps & {
   buttonText?: string;
   buttonPosition?: "inline" | "end";
   onPreviewClick?: () => void;
-  price?: string;
+  price?: number;
   currency?: string;
   polarProductId?: string;
   polarCheckoutLink?: string;
